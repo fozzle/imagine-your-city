@@ -2,9 +2,16 @@
 import os
 import dj_database_url
 
+LOCATION = os.environ['location']
+
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-DEBUG = True
+if LOCATION == "server":
+    DEBUG = False
+else:
+    DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -12,9 +19,17 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
-}
+if LOCATION == "server":
+    DATABASES = {
+            'default': dj_database_url.config(default='postgres://localhost')
+        }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'database.db'
+        }
+    }
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

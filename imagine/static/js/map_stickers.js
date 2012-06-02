@@ -36,7 +36,6 @@ function initialize() {
   google.maps.event.addListener(marker{{ photo.id }}, 'click',function() {
       infowindow{{ photo.id }}.open(map,marker{{ photo.id }});
   });
-  {% endfor %}
 }
 
 // Try HTML5 geolocation

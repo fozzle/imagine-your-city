@@ -1,0 +1,16 @@
+h1 {
+	text-align:center;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+#footer {
+	text-align: center;
+	margin: 20px;
+	font-family: sans-serif;
+}
+
+a {
+	color: red;
+}
+a.hover {
+	color: black;
+}

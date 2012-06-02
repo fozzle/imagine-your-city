@@ -6,6 +6,8 @@
 	body { height: 100%; margin: 0; padding: 0 }
 	#map_canvas { height: 100% }
 </style>
+<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 <title>{% block title %}{% endblock %}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <META NAME="Description" CONTENT="I wish this was...mapped!">
@@ -17,14 +19,9 @@
 {% block content %}
 {% endblock %}
 {% block footer %}
-<footer class="footer">
-	<div class="container">
-        <p class="pull-right">
-        	{% block report %}
-        	{% endblock %}
-        	<a href="#">Back to top</a>
-        </p>
-    </div>
+<footer id="footer">
+        <a href="#">About</a> | <a href="#">I wish there was</a> | <a href="#">RHOK</a>
+</div>
 </footer>
 {% endblock %}
 {% block scripts %}
