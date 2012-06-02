@@ -2,6 +2,8 @@
 {% block title %}
 Imagine Your City...
 {% endblock %}
+{% block header %}
+{% endblock %}
 {% block content %}
 <div id="map_canvas" style="width:80%; height:500px; margin:auto;"></div>
 {% endblock %}
@@ -15,7 +17,7 @@ Imagine Your City...
 function initialize() {
   var myOptions = {
     center: new google.maps.LatLng(-34.397, 150.644),
-    zoom: 8,
+    zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   map = new google.maps.Map(document.getElementById("map_canvas"),
