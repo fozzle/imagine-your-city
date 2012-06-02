@@ -6,9 +6,17 @@ class MapPost(models.Model):
 	photo/location"""
 
 	# Metadata
-	image = models.ImageField(upload_to='uploads/')
-	date_submitted = models.DateTimeField(auto_now=True)
-	title = models.CharField(max_length=200, blank=True)
+	image = models.CharField(max_length=400)
+	thumbnail = models.CharField(max_length=400)
+
+	# date_submitted represents the time the picture was taken
+	date_submitted = models.DateTimeField(blank=True)
+
+	# date stored is used for caching calculations, when the
+	# data was stored in our db
+	date_stored = models.DateTimeField(auto_now_add=True)
+
+	caption = models.CharField(max_length=200, blank=True)
 
 	# Coordinate data
 	latitude = models.FloatField()
