@@ -1,4 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
-Hello ya'll
+<div id="map_canvas" style="width:50%; height:300px; margin:auto;"></div>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBcEq2qfxCxc4mOSlc5lFhhOdouwkMu_c0&sensor=true">
+    </script>
+    <script type="text/javascript">
+      var map
+      function initialize() {
+        var myOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("map_canvas"),
+            myOptions);
+      }
+
+      // Try HTML5 geolocation
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+                                           position.coords.longitude);
+
+          var infowindow = new google.maps.InfoWindow({
+            map: map,
+            position: pos,
+            content: 'Hello!'
+          });
+
+          map.setCenter(pos);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      }
+</script>
 {% endblock %}

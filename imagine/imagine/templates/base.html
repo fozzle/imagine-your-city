@@ -1,15 +1,19 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+	html { height: 100% }
+	body { height: 100%; margin: 0; padding: 0 }
+	#map_canvas { height: 100% }
+</style>
 <link rel="icon" 
       type="image/png" 
       href="{{ STATIC_URL }}favicon.ico">
 <title>{% block title %}{% endblock %}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <META NAME="Description" CONTENT="GoonMarket">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" media="all" />
 </head>
-<body>
+<body onload="initialize()">
 {% block content %}
 {% endblock %}
 {% block footer %}
