@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
         # Grab last map_pos
         try:
-            last_map_post = MapPost.objects.all().order_by('date_submitted')[0]
+            last_map_post = MapPost.objects.all().order_by('date_submitted')[0].date_stored
         except:
             last_map_post = datetime.datetime(year=1980, month=1, day=1)
 
@@ -19,9 +19,9 @@ class Command(BaseCommand):
         tag = "Iwishthiswas"
 
         # TODO: parmeterize tag?
-        response = urllib2.urlopen("https://api.instagram.com/v1/tags/snow/media/"
+        response = urllib2.urlopen("https://api.instagram.com/v1/tags/{tag}/media/"
                                    "recent?access_token=177352776.f59def8.a55d4cda6"
-                                   "7eb4aa5af0a5663fd79a275")
+                                   "7eb4aa5af0a5663fd79a275".format(tag=tag))
 
         data = json.loads(response.read())
 

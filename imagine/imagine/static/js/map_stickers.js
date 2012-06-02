@@ -1,13 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
-<div id="map_canvas" style="width:80%; height:500px; margin:auto;"></div>
-{% endblock %}
-{% block scripts %}
-<script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBcEq2qfxCxc4mOSlc5lFhhOdouwkMu_c0&sensor=true">
-    </script>
-    <script type="text/javascript">
-    var map
+var map
 
 function initialize() {
   var myOptions = {
@@ -58,5 +49,4 @@ if(navigator.geolocation) {
   }, function() {
     handleNoGeolocation(true);
   });
-}</script>
-{% endblock %}
+}

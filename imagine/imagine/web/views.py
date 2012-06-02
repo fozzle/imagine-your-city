@@ -7,8 +7,8 @@ from django.http import HttpResponse, HttpResponseBadRequest
 
 def home(request):
 	# Retreive all listings (for now, in the future we will narrow it down)
-	posts = MapPost.objects.all()
-	return render_to_response("index.html", {}, RequestContext(request))
+	photos_list = MapPost.objects.all()
+	return render_to_response("index.html", {'photos_list': photos_list}, RequestContext(request))
 
 def submit(request):
 	# Take post request from phone, all data needs to be processed
