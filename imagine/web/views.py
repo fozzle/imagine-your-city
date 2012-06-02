@@ -11,6 +11,9 @@ def home(request):
 	photos_list = MapPost.objects.all()
 	return render_to_response("index.html", {'photos_list': photos_list}, RequestContext(request))
 
+def about(request):
+	return render_to_response("about.html", {}, RequestContext(request))
+
 def serve_data(request):
 
 	# Retreive all listings, return json string.

@@ -5,10 +5,12 @@ import dj_database_url
 LOCATION = os.environ['location']
 
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+
 if LOCATION == "server":
     DEBUG = False
 else:
     DEBUG = True
+
 TEMPLATE_DEBUG = DEBUG
 
 
