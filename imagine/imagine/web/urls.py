@@ -7,4 +7,5 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('imagine.web.views',
     # Examples:
     url(r'^submit/$', 'submit', name='submit'),
+    url(r'json/$', 'serve_data', name='serve_data'),
 )

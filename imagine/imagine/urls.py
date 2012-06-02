@@ -7,6 +7,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'imagine.web.views.home', name='home'),
+    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/img/favicon.ico'}),
     url(r'', include('imagine.web.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

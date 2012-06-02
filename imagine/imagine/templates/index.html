@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block title %}
+Imagine Your City...
+{% endblock %}
 {% block content %}
 <div id="map_canvas" style="width:80%; height:500px; margin:auto;"></div>
 {% endblock %}
@@ -41,7 +44,7 @@ function initialize() {
       maxWidth: 150
   });
 
-  // Listen for click
+  // Listen for click for marker id {{ photo.id }}
   google.maps.event.addListener(marker{{ photo.id }}, 'click',function() {
       infowindow{{ photo.id }}.open(map,marker{{ photo.id }});
   });
