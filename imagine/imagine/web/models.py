@@ -6,9 +6,9 @@ class MapPost(models.Model):
 	photo/location"""
 
 	# Metadata
-	image = models.ImageField()
-	date_submitted = models.DateTimeField(auto_add_now=true)
-	title = models.CharField(max=200, blank=True)
+	image = models.ImageField(upload_to='uploads/')
+	date_submitted = models.DateTimeField(auto_now=True)
+	title = models.CharField(max_length=200, blank=True)
 
 	# Coordinate data
 	latitude = models.FloatField()
