@@ -2,15 +2,43 @@ h1 {
 	text-align:center;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
-#footer {
-	text-align: center;
-	margin: 20px;
-	font-family: sans-serif;
+
+#map_canvas {
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 30px;
+	z-index: 1;
 }
 
-a {
-	color: red;
+#title_image {
+	position: fixed;
+	left: 20px;
+	top: 20px;
+	z-index: 10;
 }
-a.hover {
-	color: black;
+
+#footer {
+	position: fixed;
+	background: #ea0718;	
+	color: white;
+	text-align: center;
+	padding: 5px;
+	height: 20px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;	
+	font-family: sans-serif;
+	font-weight: bold;
+	z-index: 10;
+}
+
+#footer a {
+	color: white;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: white;
+	text-decoration: underline;
 }
