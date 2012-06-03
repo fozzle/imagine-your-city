@@ -16,6 +16,7 @@ Imagine Your City...
     var map
 
 function initialize() {
+  var map
   var myOptions = {
     center: new google.maps.LatLng(-34.397, 150.644),
     zoom: 10,
@@ -66,17 +67,17 @@ function initialize() {
       infowindow{{ photo.id }}.open(map,marker{{ photo.id }});
   });
   {% endfor %}
+  // Try HTML5 geolocation
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
+
+      map.setCenter(pos);
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  }
 }
-
-// Try HTML5 geolocation
-if(navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var pos = new google.maps.LatLng(position.coords.latitude,
-                                     position.coords.longitude);
-
-    map.setCenter(pos);
-  }, function() {
-    handleNoGeolocation(true);
-  });
-}</script>
+</script>
 {% endblock %}
