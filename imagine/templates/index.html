@@ -5,6 +5,7 @@ Imagine Your City...
 {% block header %}
 {% endblock %}
 {% block content %}
+<body onload="initialize()">
 <div id="map_canvas"></div>
 <div id="title_image"><img src="{{ STATIC_URL }}img/title.png" alt=""></div>
 {% endblock %}

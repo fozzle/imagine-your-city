@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from imagine.web.models import MapPost
 import json, urllib2, datetime
+from imagine import settings
 
 
 class Command(BaseCommand):
@@ -15,13 +16,14 @@ class Command(BaseCommand):
             last_map_post = datetime.datetime(year=1980, month=1, day=1)
 
 
+        str (last_map_post)
         # Grab images that are newer than the latest batch
         tag = "Iwishthiswas"
 
         # TODO: parmeterize tag?
         response = urllib2.urlopen("https://api.instagram.com/v1/tags/{tag}/media/"
-                                   "recent?access_token=177352776.f59def8.a55d4cda6"
-                                   "7eb4aa5af0a5663fd79a275".format(tag=tag))
+                                   "recent?access_token={key}".format(key=settings.INSTAGRAM_KEY,
+                                                                    tag=tag))
 
         data = json.loads(response.read())
 
@@ -34,7 +36,8 @@ class Command(BaseCommand):
                                         thumbnail=photo['images']['thumbnail']['url'],
                                         image=photo['images']['standard_resolution']['url'],
                                         latitude=photo['location']['latitude'],
-                                        longitude=photo['location']['longitude'])
+                                        longitude=photo['location']['longitude'],
+                                        )
                 print "Added one! \n"
 
 

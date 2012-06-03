@@ -19,6 +19,10 @@ h1 {
 	z-index: 10;
 }
 
+#about_content {
+	margin-left: 350px;
+}
+
 #footer {
 	position: fixed;
 	background: #ea0718;	
@@ -37,6 +41,7 @@ h1 {
 #footer a {
 	color: white;
 	text-decoration: none;
+	margin: 20px;
 }
 #footer a:hover {
 	color: white;

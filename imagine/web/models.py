@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class MapPost(models.Model):
 	"""Represents a user submission of a 
 	photo/location"""
@@ -21,6 +20,11 @@ class MapPost(models.Model):
 	# Coordinate data
 	latitude = models.FloatField()
 	longitude = models.FloatField()
+
+	# Source of image
+	# TODO: Howcome the friggin wipe DB isn't working!
+	#source = models.CharField(max_length=1, choices=[('0', 'instagram'),
+													  #('1', 'flickr')])
 	
 	
 

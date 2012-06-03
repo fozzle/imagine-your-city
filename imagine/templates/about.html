@@ -3,8 +3,13 @@
 About
 {% endblock %}
 {% block header %}
-<div id="header"><h1>Stick 'Em Where?!</h1></div>
+<body>
+<a href="{% url home %}"><div id="title_image"><img src="{{ STATIC_URL }}img/title.png" alt=""></a></div>
 {% endblock %}
 {% block content %}
-<p>Stick 'Em Where?! was spawned from RHOK Atlanta, in the summer of 2012. It maps pictures containing the hashtag #Iwishthiswas and geolocation information.</p>
+<div id="about_content"><p>I Wish This Was, Where? was built during Random Hacks of Kindness in June 2012 by <a href="http://kpetrovich.com">Kyle Petrovich</a>, Jeff Walters, and David Emory and spawned from the idea of <a href="https://twitter.com/#!/MathildePiard">Mathilde Piard</a>, piggybacking on artist Candy Chang's <a href="http://iwishthiswas.cc">I Wish This Was</a> public art project that invites residents to provide civic input on-site.</p>
+
+<p>To join the fun, <a href="http://civiccenter.cc/i-wish-this-was/">get some "I wish this was" stickers</a> (<a href="http://www.imagineatlanta.com/iwishthiswas/">ATLiens can get them for free</a>) and post your photos to Instagram with the hashtag #iwishthiswas - make sure geotagging is turned on so your photo shows up on the map!</p>
+
+<p><a href="https://github.com/fozzle/imagine-your-city/wiki/Todo">Future ideas</a> for the site include being able to comment and upvote project ideas, possibly links to related Kickstarters, and more!</p></div>
 {% endblock %}

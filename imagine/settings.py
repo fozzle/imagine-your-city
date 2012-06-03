@@ -97,6 +97,8 @@ STATICFILES_FINDERS = (
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'h&amp;duv1qp7mmz4n5yhu6+dooc%xqg&amp;@dtp66k1=8qun=zhkrwp-'
+FLICKR_KEY = '24b1251a0bf423737eb3ce04f101dc5b'
+INSTAGRAM_KEY = '177352776.f59def8.a55d4cda67eb4aa5af0a5663fd79a275'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
