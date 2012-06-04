@@ -11,12 +11,12 @@ class Command(BaseCommand):
 
         # Grab last map_pos
         try:
-            last_map_post = MapPost.objects.all().order_by('date_submitted')[0].date_stored
+            last_map_post = MapPost.objects.all().order_by('-date_stored')[0].date_stored
         except:
             last_map_post = datetime.datetime(year=1980, month=1, day=1)
 
 
-        str (last_map_post)
+        print str(last_map_post)
         # Grab images that are newer than the latest batch
         tag = "Iwishthiswas"
 
