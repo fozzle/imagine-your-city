@@ -11,12 +11,10 @@ class Command(BaseCommand):
 
         # Grab last map_pos
         try:
-            last_map_post = MapPost.objects.order_by('date_submitted')[0].date_stored
+            last_map_post = MapPost.objects.filter(source='1').order_by('-date_stored')[0].date_stored
         except:
         	last_map_post = datetime.datetime(year=1980, month=1, day=1)
 
-
-        print last_map_post.strftime("%s")
         # Grab images that are newer than the latest batch
         tag = "Iwishthiswas"
 
@@ -29,8 +27,6 @@ class Command(BaseCommand):
         data = json.loads(response.read())
 
        	if data.has_key('photos'):
-
-	        print data['photos']['photo']
 
 	        for photo in data['photos']['photo']:
 
@@ -67,6 +63,7 @@ class Command(BaseCommand):
 				                            image=photo_url,
 				                            latitude=image_data['location']['latitude'],
 				                            longitude=image_data['location']['longitude'],
+				                            source='1'
 					)
 				    print "Added one! \n"
 		else:

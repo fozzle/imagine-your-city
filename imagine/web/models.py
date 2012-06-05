@@ -23,8 +23,8 @@ class MapPost(models.Model):
 
 	# Source of image
 	# TODO: Howcome the friggin wipe DB isn't working!
-	#source = models.CharField(max_length=1, choices=[('0', 'instagram'),
-													  #('1', 'flickr')])
+	source = models.CharField(max_length=1, choices=[('0', 'instagram'),
+													  ('1', 'flickr')])
 	
 	
 
