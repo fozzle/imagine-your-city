@@ -47,6 +47,10 @@ function initialize() {
               new google.maps.Point(0,0),
               // The anchor for this image is the base of the flagpole at 0,32.
               new google.maps.Point(12, 16));
+
+  var infowindow = new google.maps.InfoWindow({
+      maxWidth: 150
+  });
   // Add markers
   {% for photo in photos_list %}
   var marker{{photo.id}} = new google.maps.Marker({
@@ -57,15 +61,12 @@ function initialize() {
   });   
 
   var contentString{{ photo.id }} = '<a href="{{ photo.image }}"><img src="{{photo.thumbnail}}"></a><p>{{ photo.caption }}</p>';
-  
-  var infowindow{{ photo.id }} = new google.maps.InfoWindow({
-      content: contentString{{ photo.id }},
-      maxWidth: 150
-  });
 
   // Listen for click for marker id {{ photo.id }}
   google.maps.event.addListener(marker{{ photo.id }}, 'click',function() {
-      infowindow{{ photo.id }}.open(map,marker{{ photo.id }});
+      infowindow.open(map,marker{{ photo.id }});
+      // Set content
+      infowindow.setContent(contentString{{ photo.id }});
   });
   {% endfor %}
   // Try HTML5 geolocation
