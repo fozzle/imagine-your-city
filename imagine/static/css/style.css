@@ -10,7 +10,19 @@ h1 {
 	top: 0px;
 	bottom: 30px;
 	z-index: 1;
+	height: 100%;
 }
+
+html { 
+	   height: 100%; 
+	 }
+
+	 
+body { 
+	   height: 100%; 
+	   margin: 0; 
+	   padding: 0; 
+	}
 
 #title_image {
 	position: fixed;

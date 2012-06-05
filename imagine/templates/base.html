@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-	html { height: 100% }
-	body { height: 100%; margin: 0; padding: 0 }
-	#map_canvas { height: 100% }
-</style>
+<!-- CSS -->
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map_canvas { height: 100% }
+</style>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ STATIC_URL }}js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+
+<!-- Metadata -->
 <title>{% block title %}{% endblock %}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <META NAME="Description" CONTENT="I wish this was...mapped!">
+
+<!-- Google Analytics -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -37,5 +43,4 @@
 </footer>
 {% endblock %}
 {% block scripts %}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript">
 {% endblock %}

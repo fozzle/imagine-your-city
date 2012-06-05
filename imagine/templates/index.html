@@ -10,11 +10,18 @@ Imagine Your City...
 <div id="title_image"><img src="{{ STATIC_URL }}img/title.png" alt=""></div>
 {% endblock %}
 {% block scripts %}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBcEq2qfxCxc4mOSlc5lFhhOdouwkMu_c0&sensor=true">
-    </script>
-    <script type="text/javascript">
-    var map
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".fancybox").fancybox();
+  });
+</script>
+<script type="text/javascript">
+var map
 
 function initialize() {
   var map
@@ -60,7 +67,7 @@ function initialize() {
     title: '{{ photo.caption }}'
   });   
 
-  var contentString{{ photo.id }} = '<a href="{{ photo.image }}"><img src="{{photo.thumbnail}}"></a><p>{{ photo.caption }}</p>';
+  var contentString{{ photo.id }} = '<a href="{{ photo.image }}" class="fancybox"><img src="{{photo.thumbnail}}"></a><p>{{ photo.caption }}</p>';
 
   // Listen for click for marker id {{ photo.id }}
   google.maps.event.addListener(marker{{ photo.id }}, 'click',function() {
